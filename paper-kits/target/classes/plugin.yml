@@ -10,8 +10,11 @@ commands:
     aliases: [kits]
 permissions:
   kits.use:
+    description: Allows using /kit and /kits commands
     default: true
   kits.create:
-    default: op
+    description: Allows creating kits
+    default: true
   kits.admin:
-    default: op
+    description: Allows editing and managing all kits
+    default: true
