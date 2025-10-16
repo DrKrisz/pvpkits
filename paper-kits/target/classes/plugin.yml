@@ -1,0 +1,17 @@
+name: PaperKits
+main: com.drkrisz.kits.KitsPlugin
+version: 0.1.0
+api-version: '1.21'
+author: Krisz
+commands:
+  kit:
+    description: give a kit or open the kit creator
+    usage: "/kit <name>|create|list|edit <name>"
+    aliases: [kits]
+permissions:
+  kits.use:
+    default: true
+  kits.create:
+    default: op
+  kits.admin:
+    default: op

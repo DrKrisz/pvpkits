@@ -1,0 +1,6 @@
+com\drkrisz\kits\Util.class
+com\drkrisz\kits\KitEditorSession.class
+com\drkrisz\kits\KitEditorSession$State.class
+com\drkrisz\kits\KitsPlugin.class
+com\drkrisz\kits\KitManager.class
+com\drkrisz\kits\KitEditorGUI.class

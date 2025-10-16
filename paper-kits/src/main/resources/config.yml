@@ -1,0 +1,5 @@
+# Default configuration for PaperKits.
+# Kits will be generated automatically on first run and saved in this file.
+
+# If you would like to remove the example kits, delete their sections below or use
+# the in-game editor with /kit edit <name>.
