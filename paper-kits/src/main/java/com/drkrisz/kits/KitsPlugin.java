@@ -114,10 +114,11 @@ public class KitsPlugin extends JavaPlugin implements TabExecutor {
             out.addAll(kitManager.getKitNames());
             return Util.filterPrefix(out, args[0]);
         }
-        if (args.length == 2 && args[0].equalsIgnoreCase("edit")) {
+        if (args.length == 2 && args[0].equalsIgnoreCase("edit") && sender.hasPermission("kits.create")) {
             out.addAll(kitManager.getKitNames());
             return Util.filterPrefix(out, args[1]);
         }
         return out;
     }
 }
+
