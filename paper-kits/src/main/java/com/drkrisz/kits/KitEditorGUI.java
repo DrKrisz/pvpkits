@@ -72,6 +72,13 @@ public class KitEditorGUI implements Listener {
     public void onInventoryClick(InventoryClickEvent e) {
         if (!(e.getWhoClicked() instanceof Player p)) return;
         if (!e.getView().getTitle().equals(TITLE)) return;
+        KitEditorSession session = sessions.get(p.getUniqueId());
+        if (session == null || !p.hasPermission("kits.create")) {
+            e.setCancelled(true);
+            sessions.remove(p.getUniqueId());
+            p.sendMessage(Util.color("&cno permission."));
+            return;
+        }
         e.setCancelled(false); // allow placing items in 0..44
         int slot = e.getRawSlot();
         if (slot >= 54) return; // bottom inventory
@@ -140,8 +147,14 @@ public class KitEditorGUI implements Listener {
         s.setState(KitEditorSession.State.EDITING);
 
         Bukkit.getScheduler().runTask(plugin, () -> {
+            if (!p.hasPermission("kits.create")) {
+                sessions.remove(p.getUniqueId());
+                p.sendMessage(Util.color("&cno permission."));
+                return;
+            }
             p.sendMessage(Util.color("&aSet name: &f" + raw + " &7(key: " + key + ")"));
             openEditorInventory(p, s);
         });
     }
 }
+

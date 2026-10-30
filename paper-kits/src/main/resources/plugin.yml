@@ -13,8 +13,9 @@ permissions:
     description: Allows using /kit and /kits commands
     default: true
   kits.create:
-    description: Allows creating kits
-    default: true
+    description: Allows creating and editing kits
+    default: op
   kits.admin:
-    description: Allows editing and managing all kits
-    default: true
+    description: Reserved admin node (not used by command checks)
+    default: op
+
